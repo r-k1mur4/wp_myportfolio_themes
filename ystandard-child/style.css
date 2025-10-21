@@ -123,6 +123,54 @@ main h3.wp-block-heading:before {
 }
 
 /* ========================================================
+   使用ツール一覧
+=========================================================*/
+/* .tool-type-groups { margin-top: 1.5rem; }
+.tool-type-row { display:flex; align-items:flex-start; gap:.75rem; margin:.66rem 0; }
+.tool-type__icon { width:28px; height:28px; object-fit:contain; display:inline-flex; }
+.tool-type__icon--preset { font-size:20px; line-height:1; width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; background:#f6f7f8; border-radius:6px; }
+.tool-type__body { flex:1; }
+.tool-type__line { font-size:1rem; }
+.tool-type__name { font-weight:700; }
+.tool-type__sep { margin:0 .25em; color:#999; }
+.tool-type__tools { color:#444; }
+.tool-type__desc { margin:.25rem 0 0; color:#666; font-size:.9rem; } */
+
+.tool-type-row { display:flex; align-items:flex-start; gap:.75rem; margin:.66rem 0; }
+.tool-type__icon { width:28px; height:28px; object-fit:contain; display:inline-flex; }
+.tool-type__icon--preset { font-size:20px; line-height:1; width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; background:#f6f7f8; border-radius:6px; }
+.tool-type__body { flex:1; }
+/* 名前カラムの幅（必要に応じて調整） */
+.tool-type-groups { --name-col: 12em; }
+
+/* 1行を3カラムに分割： [名前] [区切り] [ツール列挙] */
+.tool-type__line{
+  display:grid;
+  grid-template-columns: var(--name-col) 1.25em 1fr;
+  align-items: baseline;
+  column-gap:.25rem;
+}
+
+/* 体裁調整 */
+.tool-type__name{ font-weight:700; white-space:nowrap; }
+.tool-type__sep{ text-align:center; color:#999; }
+.tool-type__tools{ color:#444; }
+.tool-type__desc { margin:.25rem 0 0; color:#666; font-size:.9rem; }
+
+/* モバイルは縦積みに（始点を揃えるより可読性優先） */
+@media (max-width: 520px){
+  .tool-type__line{
+    grid-template-columns: 1fr;
+  }
+  .tool-type__sep{ display:none; }
+  .tool-type__tools::before{
+    content: "：";
+    margin-right: .25em;
+    color:#999;
+  }
+}
+
+/* ========================================================
    カスタム投稿タイプ　Skills
 =========================================================*/
 .post-type-archive-skills .archive__container.is-card {
