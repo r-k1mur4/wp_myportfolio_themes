@@ -242,8 +242,8 @@ main h3.wp-block-heading:before {
 /* メインビジュアルのスタイル */
 .hero-main {
     width: 100%;
-    max-width: 100vw; /* 画面の横幅いっぱい */
-    margin: 0;
+    max-width: 1200px; /* 画面の横幅いっぱい */
+    margin: 0 auto;
     padding: 0;
     overflow: hidden; /* はみ出し防止 */
 }
@@ -252,6 +252,6 @@ main h3.wp-block-heading:before {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 6; /* アスペクト比16:9を維持 */
-    object-fit: cover; /* 画像を枠に合わせてトリミング */
+    object-fit: contain; /* 画像を枠に合わせてトリミング */
     display: block; /* 下に余白ができるのを防ぐ */
 }
